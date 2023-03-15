@@ -59,7 +59,7 @@ header a {
 .workout-details span {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 80px;
   cursor: pointer;
   background: #f1f1f1;
   padding: 6px;
@@ -68,7 +68,7 @@ header a {
 }
 
 .workout-details span.edit{
-  right: 90px;
+  right: 20px;
 }
 
 /* new workout form */
@@ -93,6 +93,11 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+form button.cancel {
+  background: var(--error);
+  margin-left: 10px;
+}
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -103,4 +108,14 @@ div.error {
 }
 input.error {
   border: 1px solid var(--error);
+}
+
+.empty{
+  position: relative;
+}
+
+.empty h1{
+  position: absolute;
+  right: 0;
+  top: 3em;
 }

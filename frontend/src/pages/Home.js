@@ -1,4 +1,5 @@
 import {useEffect} from 'react'
+import Empty from '../comp/Empty'
 import WorkoutDetails from '../comp/WorkoutDetails'
 import WorkoutForm from '../comp/WorkoutForm'
 import useWorkoutsContext from '../hooks/useWorkoutsContext'
@@ -34,7 +35,8 @@ import useWorkoutsContext from '../hooks/useWorkoutsContext'
 } */
 
 const Home = () => { 
-    const {workouts, dispatch} = useWorkoutsContext()
+    const {dispatch, state: {workouts}} = useWorkoutsContext()
+    //console.log(state) {workouts: Array(5), editedFlag: false}
     
     useEffect(() => {
       const fetchWorkouts = async () => { 
@@ -55,9 +57,10 @@ const Home = () => {
     return(
         <div className="home">
             <div className="workouts">
-                {workouts && workouts.map(workout => (
+                {workouts.length > 0 && workouts.map(workout => (
                     <WorkoutDetails key={workout._id} workout={workout}/>
                 ))}
+                {workouts.length === 0 && <Empty />}
             </div>
             <WorkoutForm />
         </div>

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 
 const useWorkoutsContext = () => {
     const context = useContext(GlobalContext)
-    //where context = {state, dispatch} = {workouts: Arr or null, dispatch: function}
+    //where context = {state, dispatch} 
     
     if(!context) {
         throw Error('useWorkoutsContext must be used inside an WorkoutsContextProvider')
